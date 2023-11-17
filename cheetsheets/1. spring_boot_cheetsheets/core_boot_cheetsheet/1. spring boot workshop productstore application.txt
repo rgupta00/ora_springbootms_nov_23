@@ -1016,7 +1016,7 @@ Spring boot Actuator:
 
 server.port=8080
 spring.devtools.restart.enabled=true
-#management.endpoints.web.exposure.exclude=*
+management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.include=health, custom-endpoint
 management.endpoint.health.show-details=always
 management.health.disk.enabled=true
@@ -1032,6 +1032,7 @@ info.app.java.source=11
 info.app.java.target=11
 info.app.name=spring booot actuator
 
+management.info.java.enabled=true
 
 Custom end points
 
@@ -1087,7 +1088,7 @@ public class ProductController {
 		mv.setViewName("products");
 		mv.addObject("products", productService.findAll());
 		
-		return mv;
+		return mv;ndf:JdrrJA69
 	}
 }
 

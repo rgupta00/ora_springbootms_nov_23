@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.productapp.entities.Product;
 import com.productapp.service.ProductService;
-
+@CrossOrigin
 @RestController
 public class ProductController {
 	private ProductService productService;
@@ -32,7 +33,8 @@ public class ProductController {
 		this.productService = productService;
 	}
 	//@GetMapping(path = "products")
-	@GetMapping(path = "products", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+	@GetMapping(path = "products", produces = {MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE})
 	public List<Product>findAll(){
 		long start= System.currentTimeMillis();
 		List<Product> products=productService.findAll();
