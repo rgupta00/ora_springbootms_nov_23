@@ -1,10 +1,10 @@
 spring:
   application:
-    name: product-service
+    name: customer-service
 server:
-  port: 8082
+  port: 8083
   servlet:
-    context-path: /productapp
+    context-path: /customerapp
 eureka:
   client:
     register-with-eureka: true
